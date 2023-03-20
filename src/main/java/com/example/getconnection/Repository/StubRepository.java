@@ -3,11 +3,12 @@ package com.example.getconnection.Repository;
 import com.example.getconnection.DTO.HeroesWithSuperpowers;
 import com.example.getconnection.Model.Superhero;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository("Superhero_stub")
+@RequestMapping("superherodatabase")
 public class StubRepository implements IRepository {
     private List<Superhero> superheroes = new ArrayList<Superhero>();
 

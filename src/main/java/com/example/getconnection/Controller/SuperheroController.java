@@ -22,19 +22,19 @@ import java.util.List;
 @RequestMapping("/superheroes")
 public class SuperheroController { //TODO finde ud af hvorfor den viser fejl, når jeg har min getBean metode..
     private SuperheroService superheroService;
-    private IRepository repository;
+    private SuperheroRepository repository;
 
-   public SuperheroController(ApplicationContext context, @Value("${superherodatabase.impl}") String impl) {
+   /*public SuperheroController(ApplicationContext context, @Value("${superherodatabase.impl}") String impl) {
         repository = (IRepository) context.getBean(impl);
-    }
+    }*/
 
 
-    public SuperheroController(SuperheroService superheroService, IRepository repository){
+    public SuperheroController(SuperheroService superheroService, SuperheroRepository repository){
         this.superheroService = superheroService;
-        this.repository = repository;
+
     }
 
-    // Endpoint for at få alle superhelte
+    /*// Endpoint for at få alle superhelte
     @GetMapping
     public List<Superhero> getAllSuperheroes() {
         return repository.getAllSuperheroes();
@@ -63,7 +63,7 @@ public class SuperheroController { //TODO finde ud af hvorfor den viser fejl, n�
     @DeleteMapping("/{id}")
     public void deleteSuperhero(@PathVariable int id) {
         repository.deleteSuperhero(id);
-    }
+    }*/
 
     @GetMapping("getSuper")
     public ResponseEntity<List<Superhero>> getSuperhero() {
